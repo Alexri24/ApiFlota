@@ -33,7 +33,7 @@ public class ConductorRepository : IConductorRepository
                                 Nombre = reader.GetString(1),
                                 Licencia = reader.GetString32(2),
                                 Antiguedad = reader.GetInt32(3),
-                                SalarioBase= reader.decimal(4),
+                                SalarioBase= reader.Getdecimal(4),
                                 EsInternacional = reader.GetBoolean (5),
                                 FechaNacimiento = reader.DateTime (6)
                             }; 
@@ -69,7 +69,7 @@ public class ConductorRepository : IConductorRepository
                                 Nombre = reader.GetString(1),
                                 Licencia = reader.GetString32(2),
                                 Antiguedad = reader.GetInt32(3),
-                                SalarioBase= reader.decimal(4),
+                                SalarioBase= reader.Getdecimal(4),
                                 EsInternacional = reader.GetBoolean (5),
                                 FechaNacimiento = reader.DateTime (6)
                             }; 
