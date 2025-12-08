@@ -7,7 +7,7 @@ public class ConductorService : IConductorService
     {
         private readonly IConductorRepository _conductorRepository;
 
-        public CamionService(IConductorRepository conductorRepository)
+        public ConductorService(IConductorRepository conductorRepository)
         {
             _conductorRepository= conductorRepository;
             

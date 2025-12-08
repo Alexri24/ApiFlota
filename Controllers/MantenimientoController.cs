@@ -10,23 +10,23 @@ namespace ApiFlota.Controllers
    {
     private static List<Mantenimiento> mantenimientos = new List<Mantenimiento>();
 
-    private readonly IMantenimientoService _conductorService;
+    private readonly IMantenimientoService _mantenimientoService;
 
-    public MantenimientoController (IMantenimientoService conductorService)
+    public MantenimientoController (IMantenimientoService mantenimientoService)
         {
-            _conductorService = conductorService;
+            _mantenimientoService = mantenimientoService;
         }
     
         [HttpGet]
         public async Task<ActionResult<List<Mantenimiento>>> GetMantenimiento()
         {
-            var mantenimientos = await _conductorService.GetAllAsync();
+            var mantenimientos = await _mantenimientoService.GetAllAsync();
             return Ok(mantenimientos);
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Mantenimiento>> GetMantenimiento(int id)
         {
-            var mantenimientos = await _conductorService.GetByIdAsync(id);
+            var mantenimientos = await _mantenimientoService.GetByIdAsync(id);
             if (mantenimientos == null)
             {
                 return NotFound();
@@ -37,14 +37,14 @@ namespace ApiFlota.Controllers
         [HttpPost]
         public async Task<ActionResult<Mantenimiento>> CreateMantenimiento(Mantenimiento mantenimiento)
         {
-            await _conductorService.AddAsync(mantenimiento);
+            await _mantenimientoService.AddAsync(mantenimiento);
             return CreatedAtAction(nameof(GetMantenimiento), new { id = mantenimiento.Id }, mantenimiento);
         }
 
        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateMantenimiento(int id, Mantenimiento updatedMantenimiento)
         {
-            var existingMantenimiento = await _conductorService.GetByIdAsync(id);
+            var existingMantenimiento = await _mantenimientoService.GetByIdAsync(id);
             if (existingMantenimiento == null)
             {
                 return NotFound();
@@ -58,26 +58,26 @@ namespace ApiFlota.Controllers
             existingMantenimiento.FechaProgramada = updatedMantenimiento.FechaProgramada;
             existingMantenimiento.Decripcion = updatedMantenimiento.Decripcion;
 
-            await _conductorService.UpdateAsync(existingMantenimiento);
+            await _mantenimientoService.UpdateAsync(existingMantenimiento);
             return NoContent();
         }
   
        [HttpDelete("{id}")]
        public async Task<IActionResult> DeleteMantenimiento(int id)
        {
-           var mantenimiento = await _conductorService.GetByIdAsync(id);
+           var mantenimiento = await _mantenimientoService.GetByIdAsync(id);
            if (mantenimiento == null)
            {
                return NotFound();
            }
-           await _conductorService.DeleteAsync(id);
+           await _mantenimientoService.DeleteAsync(id);
            return NoContent();
        }
 
         [HttpPost("inicializar")]
         public async Task<IActionResult> InicializarDatos()
         {
-            await _conductorService.InicializarDatosAsync();
+            await _mantenimientoService.InicializarDatosAsync();
             return Ok("Datos inicializados correctamente.");
         }
 

@@ -7,7 +7,7 @@ public class AsignacionService : IAsignacionService
     {
         private readonly IAsignacionRepository _asignacionRepository;
 
-        public CamionService(IAsignacionRepository asignacionRepository)
+        public AsignacionServiceService(IAsignacionRepository asignacionRepository)
         {
             _asignacionRepository= asignacionRepository;
             

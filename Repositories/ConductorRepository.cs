@@ -165,7 +165,7 @@ public class ConductorRepository : IConductorRepository
                     command.Parameters.AddWithValue("@Antiguedad1", "3 años");
                     command.Parameters.AddWithValue("@SalarioBase1", 1900);
                     command.Parameters.AddWithValue("@EsInternacional1", 1);
-                    command.Parameters.AddWithValue("@FechaNacimiento1", 10/10/1085);
+                    command.Parameters.AddWithValue("@FechaNacimiento1", 10/10/1985);
 
                     command.Parameters.AddWithValue("@Nombre2", "Jorge");
                     command.Parameters.AddWithValue("@Licencia2", "C");
