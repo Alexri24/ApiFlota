@@ -71,7 +71,7 @@ public class ConductorRepository : IConductorRepository
                                 Antiguedad = reader.GetInt32(3),
                                 SalarioBase= reader.Getdecimal(4),
                                 EsInternacional = reader.GetBoolean (5),
-                                FechaNacimiento = reader.DateTime (6)
+                                FechaNacimiento = reader.GetDateTime (6)
                             }; 
 
                         }

@@ -2,7 +2,7 @@ using ApiFlota.Models;
 
 namespace ApiFlota.Services
 {
-    public interface IConductorService
+    public interface IRutaService
     {
         Task<List<Conductor>> GetAllAsync();
         Task<Conductor?> GetByIdAsync(int id);
