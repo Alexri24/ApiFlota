@@ -43,7 +43,7 @@ public class MantenimientoService : IMantenimientoService
             if (string.IsNullOrWhiteSpace(mantenimiento.Descripcion))
                 throw new ArgumentException("La descripción puede estar vacía.");
 
-            await _mantenimientoRepository.UpdateAsync(camion);
+            await _mantenimientoRepository.UpdateAsync(mantenimiento);
         }
 
         public async Task DeleteAsync(int id)

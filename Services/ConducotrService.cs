@@ -45,7 +45,7 @@ public class ConductorService : IConductorService
             if (string.IsNullOrWhiteSpace(conductor.Matricula))
                 throw new ArgumentException("El nombre del plato no puede estar vacío.");
 
-            await _conductorRepository.UpdateAsync(camion);
+            await _conductorRepository.UpdateAsync(conductor);
         }
 
         public async Task DeleteAsync(int id)

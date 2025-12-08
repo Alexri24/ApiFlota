@@ -94,8 +94,8 @@ public class MantenimientoRepository : IMantenimientoRepository
                     command.Parameters.AddWithValue("@Coste", mantenimiento.Coste);
                     command.Parameters.AddWithValue("@HorasTrabajo", mantenimiento.HorasTrabajo);
                     command.Parameters.AddWithValue("@EsPreventivo", mantenimiento.EsPreventivo);
-                    command.Parameters.AddWithValue("@FechaProgramada", camion.FechaProgramada);
-                    command.Parameters.AddWithValue("@Descripcion", camion.Descripcion);
+                    command.Parameters.AddWithValue("@FechaProgramada", mantenimiento.FechaProgramada);
+                    command.Parameters.AddWithValue("@Descripcion", mantenimiento.Descripcion);
                                        
                     
                     await command.ExecuteNonQueryAsync();
@@ -112,13 +112,13 @@ public class MantenimientoRepository : IMantenimientoRepository
                 string query = "UPDATE Mantenimiento SET Tipo = @Tipo, Coste = @Coste, HorasTrabajo = @HorasTrabajo, EsPreventivo = @EsPreventivo, FechaProgramada = @FechaProgramada, Decripcion = @Decripcion  WHERE Id = @Id";
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Id", Mantenimiento.Id);
+                    command.Parameters.AddWithValue("@Id", mantenimiento.Id);
                     command.Parameters.AddWithValue("@Tipo", mantenimiento.Tipo);
                     command.Parameters.AddWithValue("@Coste", mantenimiento.Coste);
                     command.Parameters.AddWithValue("@HorasTrabajo", mantenimiento.HorasTrabajo);
                     command.Parameters.AddWithValue("@EsPreventivo", mantenimiento.EsPreventivo);
-                    command.Parameters.AddWithValue("@FechaProgramada", camion.FechaProgramada);
-                    command.Parameters.AddWithValue("@Descripcion", camion.Descripcion);
+                    command.Parameters.AddWithValue("@FechaProgramada", mantenimiento.FechaProgramada);
+                    command.Parameters.AddWithValue("@Descripcion", mantenimiento.Descripcion);
                     
 
                     await command.ExecuteNonQueryAsync();

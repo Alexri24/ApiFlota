@@ -94,8 +94,8 @@ public class ConductorRepository : IConductorRepository
                     command.Parameters.AddWithValue("@Licencia", conductor.Licencia);
                     command.Parameters.AddWithValue("@Antiguedad", conductor.Antiguedad);
                     command.Parameters.AddWithValue("@SalarioBase", conductor.SalarioBase);
-                    command.Parameters.AddWithValue("@EsInternacional", camion.EsInternacional);
-                    command.Parameters.AddWithValue("@FechaNacimiento", camion.FechaNacimiento);
+                    command.Parameters.AddWithValue("@EsInternacional", conductor.EsInternacional);
+                    command.Parameters.AddWithValue("@FechaNacimiento", conductor.FechaNacimiento);
                                        
                     
                     await command.ExecuteNonQueryAsync();
@@ -112,13 +112,13 @@ public class ConductorRepository : IConductorRepository
                 string query = "UPDATE Conductor SET Nombre = @Nombre, Licencia = @Licencia, Antiguedad = @Antiguedad, SalarioBase = @SalarioBase, EsInternacional = @EsInternacional, FechaNacimiento = @FechaNacimiento  WHERE Id = @Id";
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Id", Conductor.Id);
+                    command.Parameters.AddWithValue("@Id", conductor.Id);
                     command.Parameters.AddWithValue("@Nombre", conductor.Nombre);
                     command.Parameters.AddWithValue("@Licencia", conductor.Licencia);
                     command.Parameters.AddWithValue("@Antiguedad", conductor.Antiguedad);
                     command.Parameters.AddWithValue("@SalarioBase", conductor.SalarioBase);
-                    command.Parameters.AddWithValue("@EsInternacional", camion.EsInternacional);
-                    command.Parameters.AddWithValue("@FechaNacimiento", camion.FechaNacimiento);
+                    command.Parameters.AddWithValue("@EsInternacional", conductor.EsInternacional);
+                    command.Parameters.AddWithValue("@FechaNacimiento", conductor.FechaNacimiento);
                     
 
 
