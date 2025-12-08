@@ -11,7 +11,7 @@ public class Ruta
 
     public int Prioridad { get; set; } // (1=Baja, 5=Alta)
 
-    public bool EsPrioritaria { get; set; } 
+    public int DuracionEstimada { get; set; } 
 
     public DateTime FechaInicio { get; set; } 
 
