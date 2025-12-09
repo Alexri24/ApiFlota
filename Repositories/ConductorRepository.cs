@@ -31,14 +31,14 @@ public class ConductorRepository : IConductorRepository
                             {
                                 Id = reader.GetInt32(0),
                                 Nombre = reader.GetString(1),
-                                Licencia = reader.GetString32(2),
+                                Licencia = reader.GetString(2),
                                 Antiguedad = reader.GetInt32(3),
-                                SalarioBase= reader.Getdecimal(4),
+                                SalarioBase= reader.GetDecimal(4),
                                 EsInternacional = reader.GetBoolean (5),
-                                FechaNacimiento = reader.DateTime (6)
+                                FechaNacimiento = reader.GetDateTime (6)
                             }; 
 
-                            conductores.Add(Conductor);
+                            conductores.Add(conductor);
                         }
                     }
                 }
@@ -67,9 +67,9 @@ public class ConductorRepository : IConductorRepository
                             {
                                 Id = reader.GetInt32(0),
                                 Nombre = reader.GetString(1),
-                                Licencia = reader.GetString32(2),
+                                Licencia = reader.GetString(2),
                                 Antiguedad = reader.GetInt32(3),
-                                SalarioBase= reader.Getdecimal(4),
+                                SalarioBase= reader.GetDecimal(4),
                                 EsInternacional = reader.GetBoolean (5),
                                 FechaNacimiento = reader.GetDateTime (6)
                             }; 

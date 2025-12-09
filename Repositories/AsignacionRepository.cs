@@ -36,11 +36,11 @@ public class AsignacionRepository : IAsignacionRepository
                                 FechaFin = reader.GetDateTime(4),
                                 EstaActiva = reader.GetBoolean(5),
                                 Motivo = reader.GetString(6),
-                                PrimaAsignacion = reader.Getdecimal (7)
+                                PrimaAsignacion = reader.GetDecimal (7)
                                 
                             }; 
 
-                            asignaciones.Add(Asignacion);
+                            asignaciones.Add(asignacion);
                         }
                     }
                 }
@@ -74,7 +74,7 @@ public class AsignacionRepository : IAsignacionRepository
                                 FechaFin = reader.GetDateTime(4),
                                 EstaActiva = reader.GetBoolean(5),
                                 Motivo = reader.GetString(6),
-                                PrimaAsignacion = reader.Getdecimal (7)
+                                PrimaAsignacion = reader.GetDecimal (7)
                             }; 
 
                         }
