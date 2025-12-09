@@ -28,11 +28,9 @@ public class ConductorService : IConductorService
 //PONER TODOS LOS ELEMENTOS
         public async Task AddAsync(Conductor conductor)
         {
-            if (string.IsNullOrWhiteSpace(conductor.Matricula))
-                throw new ArgumentException("La matrícula del camión no puede estar vacía.");
+            if (string.IsNullOrWhiteSpace(conductor.Nombre))
+                throw new ArgumentException("El nombre del conductor no puede estar vacía.");
 
-            if (string.IsNullOrWhiteSpace(conductor.Matricula))
-                throw new ArgumentException("La matrícula debe ser mayor que cero.");
 
             await _conductorRepository.AddAsync(conductor);
         }
@@ -42,8 +40,8 @@ public class ConductorService : IConductorService
             if (conductor.Id <= 0)
                 throw new ArgumentException("El ID no es válido para actualización.");
 
-            if (string.IsNullOrWhiteSpace(conductor.Matricula))
-                throw new ArgumentException("El nombre del plato no puede estar vacío.");
+            if (string.IsNullOrWhiteSpace(conductor.Nombre))
+                throw new ArgumentException("El nombre no puede estar vacío.");
 
             await _conductorRepository.UpdateAsync(conductor);
         }
