@@ -34,11 +34,11 @@ public class MantenimientoRepository : IMantenimientoRepository
                                 Coste = reader.GetDecimal(2),
                                 HorasTrabajo = reader.GetInt32(3),
                                 EsPreventivo = reader.GetBoolean(4),
-                                FechaProgramada =reader.DateTime (5),
-                                Descripcion = reader.DateString (6)
+                                FechaProgramada =reader.GetDateTime (5),
+                                Descripcion = reader.GetString (6)
                             }; 
 
-                            mantenimientos.Add(Mantenimiento);
+                            mantenimientos.Add(mantenimiento);
                         }
                     }
                 }

@@ -56,7 +56,7 @@ namespace ApiFlota.Controllers
             existingMantenimiento.HorasTrabajo = updatedMantenimiento.HorasTrabajo;
             existingMantenimiento.EsPreventivo= updatedMantenimiento.EsPreventivo;
             existingMantenimiento.FechaProgramada = updatedMantenimiento.FechaProgramada;
-            existingMantenimiento.Decripcion = updatedMantenimiento.Decripcion;
+            existingMantenimiento.Descripcion = updatedMantenimiento.Descripcion;
 
             await _mantenimientoService.UpdateAsync(existingMantenimiento);
             return NoContent();
