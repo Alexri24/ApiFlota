@@ -7,7 +7,7 @@ public class AsignacionService : IAsignacionService
     {
         private readonly IAsignacionRepository _asignacionRepository;
 
-        public AsignacionServiceService(IAsignacionRepository asignacionRepository)
+        public AsignacionService(IAsignacionRepository asignacionRepository)
         {
             _asignacionRepository= asignacionRepository;
             
@@ -34,7 +34,7 @@ public class AsignacionService : IAsignacionService
             if ( Conductor.Id <= 0)
                 throw new ArgumentException("El ID del conductor no ser menor que 0.");
 
-            if (string.IsNullOrWhiteSpace(asignacion.FechaAsignacion))
+            if (DateTime.IsNullOrWhiteSpace(asignacion.FechaAsignacion))
                 throw new ArgumentException("La Fecha no puede estar vacía.");
 
             await _asignacionRepository.AddAsync(asignacion);
@@ -51,7 +51,7 @@ public class AsignacionService : IAsignacionService
             if ( Conductor.Id <= 0)
                 throw new ArgumentException("El ID del conductor no ser menor que 0.");
 
-            if (string.IsNullOrWhiteSpace(asignacion.FechaAsignacion))
+            if (DateTime.IsNullOrWhiteSpace(asignacion.FechaAsignacion))
                 throw new ArgumentException("La Fecha no puede estar vacía.");
 
             await _asignacionRepository.UpdateAsync(asignacion);
