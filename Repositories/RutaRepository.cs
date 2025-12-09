@@ -32,13 +32,13 @@ public class RutaRepository : IRutaRepository
                                 Id = reader.GetInt32(0),
                                 Origen = reader.GetString(1),
                                 Destino = reader.GetString(2),
-                                DistanciaKm = reader.Getdecimal(3),
+                                DistanciaKm = reader.GetDecimal(3),
                                 Prioridad = reader.GetInt32(4),
                                 DuracionEstimada =reader.GetInt32 (5),
-                                FechaInicio = reader.DateTime (6)
+                                FechaInicio = reader.GetDateTime (6)
                             }; 
 
-                            rutas.Add(Ruta);
+                            rutas.Add(ruta);
                         }
                     }
                 }
@@ -68,16 +68,16 @@ public class RutaRepository : IRutaRepository
                                 Id = reader.GetInt32(0),
                                 Origen = reader.GetString(1),
                                 Destino = reader.GetString(2),
-                                DistanciaKm = reader.Getdecimal(3),
+                                DistanciaKm = reader.GetDecimal(3),
                                 Prioridad = reader.GetInt32(4),
                                 DuracionEstimada =reader.GetInt32 (5),
-                                FechaInicio = reader.DateTime (6)
+                                FechaInicio = reader.GetDateTime (6)
                             }; 
 
                         }
                     }
                 }
-            }
+            } 
             return ruta;
         }
 
