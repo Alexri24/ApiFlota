@@ -4,10 +4,10 @@ namespace ApiFlota.Services
 {
     public interface IRutaService
     {
-        Task<List<Conductor>> GetAllAsync();
-        Task<Conductor?> GetByIdAsync(int id);
-        Task AddAsync(Conductor conductor);
-        Task UpdateAsync(Conductor conductor);
+        Task<List<Ruta>> GetAllAsync();
+        Task<Ruta?> GetByIdAsync(int id);
+        Task AddAsync(Ruta ruta);
+        Task UpdateAsync(Ruta ruta);
         Task DeleteAsync(int id);
         Task InicializarDatosAsync();
 
