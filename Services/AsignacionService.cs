@@ -25,10 +25,9 @@ public class AsignacionService : IAsignacionService
 
             return await _asignacionRepository.GetByIdAsync(id);
         }
-//PONER TODOS LOS ELEMENTOS
         public async Task AddAsync(Asignacion asignacion)
         {
-            if ( Camion.Id <= 0)
+            if ( Camionid.id <= 0 )
                 throw new ArgumentException("El ID del camión no ser menor que 0.");
 
             if ( Conductor.Id <= 0)
@@ -39,16 +38,15 @@ public class AsignacionService : IAsignacionService
 
             await _asignacionRepository.AddAsync(asignacion);
         }
-//PONER TODOS LOS ELEMENTOS
         public async Task UpdateAsync(Asignacion asignacion)
         {
             if (asignacion.Id <= 0)
                 throw new ArgumentException("El ID no es válido para actualización.");
 
-              if ( Camion.Id <= 0)
+              if ( asignacion.CamionId <= 0)
                 throw new ArgumentException("El ID del camión no ser menor que 0.");
 
-            if ( Conductor.Id <= 0)
+            if ( asignacion.ConductorId <= 0)
                 throw new ArgumentException("El ID del conductor no ser menor que 0.");
 
             if (DateTime.IsNullOrWhiteSpace(asignacion.FechaAsignacion))
