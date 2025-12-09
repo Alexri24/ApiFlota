@@ -27,7 +27,7 @@ public class AsignacionService : IAsignacionService
         }
         public async Task AddAsync(Asignacion asignacion)
         {
-            if ( Camionid.id <= 0 )
+            if ( Camion.id <= 0 )
                 throw new ArgumentException("El ID del camión no ser menor que 0.");
 
             if ( Conductor.Id <= 0)
